@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="bn"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>টিকা সাথী · Teeka Shathi</title>
+<meta name="theme-color" content="#c62838">
+<meta name="description" content="বাংলাদেশে শিশুর টিকার আনুমানিক সময়সূচি, জরুরি বিপদ-চিহ্ন এবং টিকা সম্পর্কে সহজ বাংলায় তথ্য।">
+<title>টিকা সাথী | শিশুর টিকা সহায়ক</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6faf8;--card:#fff;--tx:#12302b;--mut:#566d68;--pri:#0f766e;--prt:#fff;--bd:#d5e4df;--warn:#b42318;--wbg:#fdecea;--ok:#067647;--obg:#e7f6ee;--due:#92400e;--dbg:#fef3c7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1917;--card:#132623;--tx:#e6f2ef;--mut:#9bb5af;--pri:#2dd4bf;--prt:#032;--bd:#25423d;--warn:#fda29b;--wbg:#3a1815;--ok:#75e0a7;--obg:#10281d;--due:#fcd34d;--dbg:#3a2a0a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0c1917;--card:#132623;--tx:#e6f2ef;--mut:#9bb5af;--pri:#2dd4bf;--prt:#032;--bd:#25423d;--warn:#fda29b;--wbg:#3a1815;--ok:#75e0a7;--obg:#10281d;--due:#fcd34d;--dbg:#3a2a0a;color-scheme:dark}
+:root{--bg:#fffafa;--card:#ffffff;--tx:#2a1719;--mut:#78676a;--pri:#c62838;--prt:#ffffff;--bd:#f0d9dc;--warn:#b42332;--wbg:#fff0f1;--ok:#176b45;--obg:#eaf7ef;--due:#8a4b08;--dbg:#fff5df;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans Bengali",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
-main{max-width:640px;margin:0 auto;padding:16px}
+main{max-width:760px;margin:0 auto;padding:clamp(14px,3vw,28px)}
+.hero{background:linear-gradient(135deg,#b91f32,#e34b5c);color:#fff;border-radius:20px;padding:clamp(20px,4vw,30px);margin-bottom:16px;box-shadow:0 12px 30px #c6283818}
+.hero .sub{color:#e0f2f1;margin:5px 0 0}
+.hero h1{font-size:clamp(1.45rem,4vw,2rem);letter-spacing:-.03em}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 6px}
+.nav-wrap{position:sticky;top:0;z-index:5;padding:8px 0;background:var(--bg)}
+nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0}
+nav button{min-height:48px;transition:background .18s,border-color .18s}
+nav button:focus-visible,.btn:focus-visible,.chips button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #38bdf8;outline-offset:2px}
+.card{box-shadow:0 5px 18px #12302b08}
+.section-intro{margin:18px 2px 10px}
+.section-intro h2{font-size:1.12rem;margin:0}
+.section-intro p{margin:2px 0;color:var(--mut);font-size:.88rem}
+.btn{min-height:44px;transition:filter .15s,transform .15s}
+.btn:hover{filter:brightness(1.05)}
+.btn:active{transform:translateY(1px)}
+input[type=date],textarea{min-height:44px}
+textarea{resize:vertical}
+.row{align-items:flex-start}
+.row > div{min-width:0}
+.tag{margin-top:3px}
+.progress-track{height:7px;background:var(--bd);border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.progress-fill{height:100%;background:var(--pri);border-radius:99px;transition:width .25s}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.kpi{padding:10px;border:1px solid var(--bd);border-radius:12px;background:var(--bg)}
+.kpi strong{display:block;font-size:1.25rem;line-height:1.4}
+.kpi span{font-size:.75rem;color:var(--mut)}
+.card-heading{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.card-heading .symbol{width:36px;height:36px;display:grid;place-items:center;background:var(--obg);border-radius:11px}
+footer{border-top:1px solid var(--bd);margin-top:24px;padding:16px 0 4px}
+@media(max-width:420px){main{padding:12px}.hero{border-radius:16px}.nav-wrap{margin:0 -2px}nav button{font-size:.78rem;padding:8px 3px}.row{gap:6px}.tag{font-size:.69rem;padding:3px 7px}.kpi-grid{gap:5px}.kpi{padding:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 h1{font-size:1.5rem;margin:4px 0 0}.sub{color:var(--mut);margin:0 0 12px;font-size:.9rem}
 nav{display:flex;gap:6px;margin:12px 0}
 nav button{flex:1;padding:10px 4px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;font:inherit;font-size:.85rem;cursor:pointer}
@@ -33,44 +64,62 @@ input[type=date],textarea{width:100%;padding:10px;border:1px solid var(--bd);bor
 .warnbox{border-left:4px solid var(--warn);background:var(--wbg);color:var(--warn);padding:10px 12px;border-radius:8px;font-size:.85rem;margin:10px 0}
 [hidden]{display:none!important}
 </style></head><body><main>
-<h1>🛡️ টিকা সাথী <span style="font-weight:400;font-size:1rem">· Teeka Shathi</span></h1>
-<p class="sub">শিশুর টিকার সময়সূচি, প্রশ্নের উত্তর ও বিপদ-চিহ্ন · Child vaccine companion</p>
-<div class="warnbox">এটি ডাক্তার নয়। জরুরি অবস্থায় সরাসরি হাসপাতালে যান বা ১৬২৬৩ নম্বরে (স্বাস্থ্য বাতায়ন) ফোন করুন। This is not a doctor.</div>
-<nav role="tablist">
-<button role="tab" aria-selected="true" data-t="s">📅 সময়সূচি</button>
-<button role="tab" aria-selected="false" data-t="f">⚠️ বিপদ-চিহ্ন</button>
-<button role="tab" aria-selected="false" data-t="q">💬 প্রশ্ন করুন</button>
-</nav>
+<header class="hero">
+<p class="eyebrow">শিশুর সুস্থতা, প্রতিটি ধাপে</p>
+<h1>🛡️ টিকা সাথী <span style="font-weight:400;font-size:.95rem">· Teeka Shathi</span></h1>
+<p class="sub">টিকার সময়সূচি জানুন, জরুরি লক্ষণ চিনুন, নির্ভরযোগ্য স্বাস্থ্যতথ্য পান।</p>
+</header>
+<div class="warnbox" role="note"><strong>জরুরি সতর্কতা:</strong> এটি চিকিৎসকের বিকল্প নয়। শিশুর শ্বাসকষ্ট, খিঁচুনি বা অচেতন/সাড়া কমে গেলে এখনই হাসপাতালে যান। স্বাস্থ্য বাতায়ন: <a href="tel:16263" style="color:inherit;font-weight:700">১৬২৬৩</a></div>
+<div class="nav-wrap"><nav role="tablist" aria-label="প্রধান বিভাগ">
+<button id="tab-s" role="tab" aria-selected="true" aria-controls="s" data-t="s">📅 সময়সূচি</button>
+<button id="tab-f" role="tab" aria-selected="false" aria-controls="f" data-t="f">⚠️ বিপদ-চিহ্ন</button>
+<button id="tab-q" role="tab" aria-selected="false" aria-controls="q" data-t="q">💬 প্রশ্ন করুন</button>
+</nav></div>
 
-<section id="s">
-<div class="card"><label for="dob">শিশুর জন্ম তারিখ / Date of birth</label>
-<input type="date" id="dob"><button class="btn" id="go">সময়সূচি দেখুন</button>
+<section id="s" role="tabpanel" aria-labelledby="tab-s">
+<div class="section-intro"><h2>টিকার ক্যালেন্ডার</h2><p>জন্মতারিখ দিলে সম্ভাব্য টিকার তারিখ ও অবস্থা দেখুন।</p></div>
+<div class="card"><div class="card-heading"><span class="symbol">📅</span><div><strong>শিশুর জন্মতারিখ</strong><div class="note">Date of birth</div></div></div><label for="dob">জন্মতারিখ নির্বাচন করুন</label>
+<input type="date" id="dob" autocomplete="bday" required><button class="btn" id="go">সময়সূচি দেখুন →</button><button class="btn" id="reset" type="button" style="background:transparent;color:var(--pri);border:1px solid var(--bd);margin-left:6px">রিসেট</button><p id="doberr" class="note" role="alert" hidden></p>
 <p class="note">তারিখ শুধু আপনার ফোনে হিসাব হয়, কোথাও জমা হয় না। Nothing is stored.</p></div>
 <div class="card" id="out" hidden></div>
 <p class="note">নিয়মিত EPI সূচির ভিত্তিতে আনুমানিক তারিখ। আপনার টিকা কার্ড ও স্বাস্থ্যকর্মীর কথাই চূড়ান্ত। ২০২৬ সালের বিশেষ হাম-রুবেলা ক্যাম্পেইন (৬ মাস–৫ বছর) সম্পর্কে স্বাস্থ্যকর্মীর কাছে জানুন।</p>
 </section>
 
-<section id="f" hidden>
+<section id="f" role="tabpanel" aria-labelledby="tab-f" hidden>
+<div class="section-intro"><h2>বিপদ-চিহ্ন যাচাই</h2><p>যে লক্ষণগুলো এখন আছে, সেগুলো বেছে নিন।</p></div>
 <div class="card"><b>শিশুর কী কী লক্ষণ আছে? / Tick what applies</b>
 <div id="flags"></div>
 <button class="btn" id="chk">ফলাফল দেখুন</button>
 <div id="fres"></div></div>
 </section>
 
-<section id="q" hidden>
+<section id="q" role="tabpanel" aria-labelledby="tab-q" hidden>
+<div class="section-intro"><h2>টিকা নিয়ে প্রশ্ন</h2><p>সাধারণ প্রশ্নের উত্তর দেখুন; জরুরি সমস্যায় চিকিৎসা নিন।</p></div>
 <div class="card"><div id="chat"><div class="msg a">আসসালামু আলাইকুম! হাম, টিকা বা টিকা নিয়ে গুজব সম্পর্কে প্রশ্ন করুন। আমি শুধু যাচাই করা তথ্য থেকে উত্তর দিই।</div></div>
 <div class="chips" id="chips"></div>
-<textarea id="qi" rows="2" placeholder="যেমন: টিকা দিলে কি অটিজম হয়?"></textarea>
+<label for="qi">আপনার প্রশ্ন</label><textarea id="qi" rows="2" maxlength="500" placeholder="যেমন: টিকা দিলে কি অটিজম হয়?" aria-describedby="mode"></textarea>
 <button class="btn" id="ask">পাঠান</button>
 <p class="note" id="mode"></p></div>
 </section>
-<p class="note" style="text-align:center">টিকা সাথী · AI Battle প্রোটোটাইপ · তথ্যসূত্র: DGHS/EPI, WHO, UNICEF</p>
+<footer><p class="note" style="text-align:center;margin:0">টিকা সাথী </p><p class="note" style="text-align:center;margin:4px 0">তথ্যসূত্র: DGHS/EPI, WHO, UNICEF · টিকার তারিখ আপনার টিকা কার্ডের সঙ্গে মিলিয়ে নিন।</p></footer>
 </main>
 <script>
 const $=s=>document.querySelector(s);
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
- document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected',x===b));
- ['s','f','q'].forEach(i=>$('#'+i).hidden=i!==b.dataset.t);});
+document.querySelectorAll('nav button').forEach((b,index)=>b.onclick=()=>{
+ document.querySelectorAll('nav button').forEach((x,i)=>{
+  x.setAttribute('aria-selected',x===b);
+  x.tabIndex=x===b?0:-1;
+ });
+ ['s','f','q'].forEach(i=>$('#'+i).hidden=i!==b.dataset.t);
+});
+document.querySelectorAll('nav button').forEach((b,index)=>b.tabIndex=index===0?0:-1);
+document.querySelector('nav').addEventListener('keydown',e=>{
+ const tabs=[...document.querySelectorAll('nav button')];
+ const i=tabs.indexOf(document.activeElement);
+ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+  e.preventDefault();tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length].focus();
+ }
+});
 
 // ---- Schedule (rule-based, no AI needed) ----
 const bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
@@ -83,19 +132,25 @@ const SCH=[
  ['হাম-রুবেলা (MR) ২য় ডোজ','১৫ মাস',15,'m']];
 function due(dob,v,t){const d=new Date(dob);t=='d'?d.setDate(d.getDate()+v):d.setMonth(d.getMonth()+v);return d}
 $('#go').onclick=()=>{
- const v=$('#dob').value;if(!v)return;
- const dob=new Date(v),now=new Date();now.setHours(0,0,0,0);
- if(dob>now){$('#out').hidden=false;$('#out').textContent='জন্ম তারিখ ভবিষ্যতের হতে পারে না।';return}
- let h='<b>টিকার তালিকা</b>';
+ const v=$('#dob').value;
+ $('#doberr').hidden=true;
+ if(!v){$('#doberr').textContent='অনুগ্রহ করে শিশুর জন্মতারিখ নির্বাচন করুন।';$('#doberr').hidden=false;$('#dob').focus();return;}
+ const [yy,mm,dd]=v.split('-').map(Number);const dob=new Date(yy,mm-1,dd);const now=new Date();now.setHours(0,0,0,0);
+ if(dob>now){$('#doberr').textContent='জন্মতারিখ ভবিষ্যতের হতে পারে না।';$('#doberr').hidden=false;$('#out').hidden=true;return}
+ let h='<div class="card-heading"><span class="symbol">💉</span><div><strong>সম্ভাব্য টিকার তালিকা</strong><div class="note">টিকা কার্ডের সঙ্গে মিলিয়ে নিন</div></div></div>';
  SCH.forEach(([n,w,x,t])=>{
   const d=due(dob,x,t),diff=Math.round((d-now)/864e5);
   let c,l;
   if(diff>14){c='soon';l='আসছে'}else if(diff>=-14){c='due';l=diff>=0?'এখন সময়':'এই সপ্তাহে'}
   else{c='late';l='কার্ড মিলিয়ে দেখুন'}
   h+=`<div class="row"><div>${n}<small>${w} · ${d.toLocaleDateString('bn-BD',{day:'numeric',month:'long',year:'numeric'})}</small></div><span class="tag ${c}">${l}</span></div>`});
+ const elapsedDays=Math.max(0,Math.floor((now-dob)/864e5));
+ const completed=SCH.filter(([n,w,x,t])=>due(dob,x,t)<now).length;
+ h+=`<div class="kpi-grid"><div class="kpi"><strong>${bn(completed)}/${bn(SCH.length)}</strong><span>সময় পেরিয়েছে</span></div><div class="kpi"><strong>${bn(Math.floor(elapsedDays/30.4375))}</strong><span>আনুমানিক মাস</span></div><div class="kpi"><strong>${bn(SCH.length-completed)}</strong><span>পরবর্তী/বাকি</span></div></div><div class="progress-track" aria-label="সময়সূচির অগ্রগতি"><div class="progress-fill" style="width:${Math.min(100,completed/SCH.length*100)}%"></div></div>`;
  const mo=(now-dob)/2.63e9;
  if(mo<9)h+='<p class="note">৯ মাসের কম বয়সী শিশু হামের নিয়মিত টিকা পায় না। পরিবারের সবার টিকা নিশ্চিত করলে তারা সুরক্ষিত থাকে।</p>';
- $('#out').innerHTML=h;$('#out').hidden=false};
+ $('#out').innerHTML=h;$('#out').hidden=false;$('#out').scrollIntoView({behavior:'smooth',block:'nearest'});};
+$('#reset').onclick=()=>{$('#dob').value='';$('#out').hidden=true;$('#doberr').hidden=true;$('#dob').focus();};
 
 // ---- Red-flag checker (rule-based safety layer) ----
 const FL=[['r','শ্বাস নিতে কষ্ট বা দ্রুত শ্বাস'],['r','খিঁচুনি হয়েছে'],['r','খুব নেতিয়ে আছে / ডাকলে সাড়া কম'],['r','দুধ বা পানি খেতে পারছে না'],['r','বারবার বমি বা পাতলা পায়খানা'],['a','জ্বর ও সারা গায়ে লালচে র‍্যাশ'],['a','কাশি, সর্দি বা চোখ লাল'],['a','হামের রোগীর সংস্পর্শে এসেছে']];
@@ -108,7 +163,7 @@ $('#chk').onclick=()=>{
  else if(a>=2)h='<div class="res amb">হামের সম্ভাবনা থাকতে পারে। আজই স্বাস্থ্যকর্মী বা ডাক্তারের সঙ্গে যোগাযোগ করুন, অন্য শিশুদের থেকে আলাদা রাখুন এবং আগে ফোন করে হাসপাতালে জানান।</div>';
  else if(a==1)h='<div class="res amb">লক্ষণের দিকে নজর রাখুন। বাড়লে বা নতুন লক্ষণ এলে স্বাস্থ্যকর্মীর সঙ্গে কথা বলুন।</div>';
  else h='<div class="res grn">কোনো বিপদ-চিহ্ন বাছাই করা হয়নি। তবু চিন্তা থাকলে স্বাস্থ্যকর্মীকে জিজ্ঞাসা করুন।</div>';
- $('#fres').innerHTML=h+'<p class="note">এটি রোগ নির্ণয় নয়, শুধু দিকনির্দেশনা।</p>'};
+ $('#fres').innerHTML=h+'<p class="note">এটি রোগ নির্ণয় নয়, শুধু দিকনির্দেশনা।</p>';$('#fres').setAttribute('role','status');};
 
 // ---- Q&A: AI answers grounded ONLY in this vetted fact sheet ----
 const QS=['টিকা দিলে কি অটিজম হয়?','হামের লক্ষণ কী?','৯ মাসের কম বয়সী শিশু কীভাবে সুরক্ষিত থাকবে?','টিকার পর জ্বর এলে কী করব?'];
@@ -117,6 +172,7 @@ const add=(t,c)=>{const d=document.createElement('div');d.className='msg '+c;d.t
 $('#chips').innerHTML=QS.map(q=>`<button>${q}</button>`).join('');
 $('#chips').onclick=e=>{if(e.target.tagName=='BUTTON'){$('#qi').value=e.target.textContent;send()}};
 $('#ask').onclick=send;
+$('#qi').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}});
 // ---- AI: calls the Netlify Function (key lives on the server, nothing to configure here) ----
 async function askAI(q){
  const r=await fetch('/.netlify/functions/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});
@@ -126,14 +182,17 @@ async function askAI(q){
  return t;
 }
 async function send(){
- const q=$('#qi').value.trim();if(!q)return;$('#qi').value='';add(q,'u');
+ const q=$('#qi').value.trim();if(!q)return;
+ if(q.length>500){$('#mode').textContent='প্রশ্নটি ৫০০ অক্ষরের মধ্যে লিখুন।';return;}
+ $('#ask').disabled=true;$('#ask').textContent='উত্তর খোঁজা হচ্ছে…';$('#qi').value='';add(q,'u');
  const el=add('…','a');
  try{
   el.textContent=await askAI(q);
-  $('#mode').textContent='AI উত্তর · যাচাই করা তথ্যভাণ্ডার থেকে';
+  $('#mode').textContent='AI উত্তর · সার্ভার-সংযুক্ত সংস্করণ';
  }catch(e){
   const m=LOCAL.find(x=>x[0].test(q));
   el.textContent=m?m[1]:'আমি নিশ্চিত নই। অনুগ্রহ করে স্থানীয় স্বাস্থ্যকর্মীকে জিজ্ঞাসা করুন বা ১৬২৬৩ নম্বরে ফোন করুন।';
-  $('#mode').textContent='অফলাইন মোড · সংরক্ষিত উত্তর';}
+  $('#mode').textContent='অফলাইন মোড · সংরক্ষিত উত্তর';
+ } finally {$('#ask').disabled=false;$('#ask').textContent='পাঠান';}
 }
 </script></body></html>
